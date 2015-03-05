@@ -8,9 +8,11 @@ file_read = open(file_name, "r")
 file_write = open(base+".fastq", "w")
 
 for seq_record in SeqIO.parse(file_read, "fasta"):
-    seq_record.letter_annotations["phred_quality"] = [40] * len(seq_record)
-    SeqIO.write(seq_record, file_write, "fastq")
+    write_seq = str(seq_record.seq)
+    write_id = str(seq_record.id)
+    qual_len = len(write_seq)
+    file_write.write("@"+write_id+"\n"+write_seq+"\n"+"+"+"\n"+("~"*qual_len)+"\n")
 
 file_read.close()
-file_write.close() 
-    
+file_write.close()
+
