@@ -8,7 +8,7 @@ base = name[:ind]
 file_read = open(name,"r")
 file_write = open(base+".sam","w")
 
-file_write.write("@SQ SN:"+base+" LN:unknown")
+file_write.write("@SQ SN:"+base+" LN:unknown"+"\n")
 
 for record in SeqIO.parse(file_read,"fasta"):
     raw_seq = str(record.seq).split("N")
