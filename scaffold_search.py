@@ -11,9 +11,9 @@ file_read = open(file_name, "r")
 for seq_record in SeqIO.parse(file_read, "fasta"):
     curr_id = str(seq_record.id)
     curr_seq = str(seq_record.seq)
-    write_seq = re.sub("(.{70})", "\\1\n", curr_seq, 0, re.DOTALL)
+    seq_record.id = base
     fasta_write = open(curr_id+".fasta", "a")
-    fasta_write.write(">"+str(base)+"\n"+str(write_seq)+"\n")
+    SeqIO.write(seq_record, fast_write, "fasta")
     fasta_write.close()
 
 file_read.close()
