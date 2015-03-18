@@ -11,6 +11,7 @@ do
     python fasta2sam_multi.py $file
 done
 
+#.sam is first converted to .bam, then sorted, and finally .bai is created
 echo -e "consensus.sam created. Starting .sam to .bam conversion...\n"
 samtools view -bS consensus.sam > consensus.bam
 
@@ -20,4 +21,4 @@ samtools sort consensus.bam consensus_sorted
 echo -e "consensus.bam sorted. Starting .bai creation...\n"
 samtools index consensus_sorted.bam
 
-echo "consensus.bai created."
+echo "consensus.bai created. Process complete."
