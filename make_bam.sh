@@ -7,12 +7,17 @@ done
 
 for file in *.fasta
 do
+    echo -e "Processing ${file}...\n"
     python fasta2sam_multi.py $file
 done
-echo "consensus.sam created. Starting .sam to .bam conversion..."
+
+echo -e "consensus.sam created. Starting .sam to .bam conversion...\n"
 samtools view -bS consensus.sam > consensus.bam
-echo "consensus.bam created. Starting .bam sort..."
+
+echo -e "consensus.bam created. Starting .bam sort...\n"
 samtools sort consensus.bam consensus_sorted
-echo "consensus.bam sorted. Starting .bai creation..."
+
+echo -e "consensus.bam sorted. Starting .bai creation...\n"
 samtools index consensus_sorted.bam
+
 echo "consensus.bai created."
