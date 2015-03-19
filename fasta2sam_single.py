@@ -8,9 +8,18 @@ base = name[:ind]
 file_read = open(name,"r")
 file_write = open(base+".sam","w")
 
-file_write.write("@SQ\tSN:"+base+"\tLN:1250000\n") #magic number to convert to .bam with multiple scaffolds per file; else use 0
+records = list(SeqIO.parse(file_read,"fasta")) #must be stored as list for multiple operations because iterator cannot be reset
 
-for record in SeqIO.parse(file_read,"fasta"):
+max_len = 0 #used to create the template length
+
+for sequence in records:
+    curr_len = len(sequence.seq)
+    if curr_len > max_len:
+        max_len = curr_len
+
+file_write.write("@SQ\tSN:"+base+"\tLN:"+str(max_len+10)+"\n") #+10bp padding needed for .bam viewing
+
+for record in records:
     raw_seq = str(record.seq).split("N")
     qname = record.id
     gap_count = 0 #count gaps to see where next read starts after gap
