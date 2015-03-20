@@ -1,24 +1,23 @@
 #!/bin/bash
 
-#This script is the GNU parallel version of fastatobam.sh.
-#It converts scaffold.fasta files into a sorted .bam file and divides the resulting files into groups of 1000.
+#This script converts scaffold.fasta files into a sorted .bam file and divides the resulting files into groups of 1000.
 #The 1000 grouping is for merging .bam files; samtools has a limited memory space to do the merge so only a maximum of 1000 files per merge can be used before overloading. Though the sorting step can be separated, it is more convenient if done here.
 #First, the script converts the file to .sam, then .bam, and finally sorts the new .bam file.
 #The resulting files are sorted into groups of 1000 and placed into their respective directories. 
 
-fastatobam() 
-{
-    file=$1
-    base=${file%%.*}
-    python fasta2sam_single.py $file
-    samtools view -bS ${base}.sam > ${base}.bam
-    samtools sort ${base}.bam ${base}_sorted
-    #samtools index ${base}_sorted.bam
-}
+file=$1
+base=${file%%.*}
 
-export -f fastatobam
+python fasta2sam_single.py $file
 
-parallel fastatobam {} ::: *.fasta
+samtools view -bS ${base}.sam > ${base}.bam
+
+samtools sort ${base}.bam ${base}_sorted
+
+#samtools index ${base}_sorted.bam
+
+counter=0
+foldernum=1
 
 parentdir=~/flaxdb-data #set the parent directory to store group directories
 counter=0
@@ -44,4 +43,4 @@ do
             mv $file $dir
         fi
     fi
-done    
+done      
