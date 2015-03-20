@@ -1,3 +1,6 @@
+#This script does the actual conversion from .fasta to .sam. 
+#Arbitrary values are set for the CIGAR, QUAL, and FLAG fields. 
+
 from Bio import SeqIO
 import sys
 
@@ -17,7 +20,7 @@ for sequence in records:
     if curr_len > max_len:
         max_len = curr_len
 
-file_write.write("@SQ\tSN:"+base+"\tLN:"+str(max_len+10)+"\n") #+10bp padding needed for .bam viewing
+file_write.write("@SQ\tSN:"+base+"\tLN:"+str(max_len)+"\n") #+10bp padding needed for .bam viewing
 
 for record in records:
     raw_seq = str(record.seq).split("N")
