@@ -10,15 +10,16 @@ mkdir $dir
 make_consensus() 
 {
     file=$1
+    destination=$2
     cd $file
     samtools merge -f ${file}.bam *.bam
-    cp ${file}.bam $dir
+    cp ${file}.bam $destination
     cd ..
 }
 
 export -f make_consensus
 
-parallel make_consensus {} ::: consensus_*
+parallel make_consensus {} ::: consensus_* ::: $dir
 
 cd $dir
 samtools merge consensus_merged.bam *.bam #creates the final merged .bam file
