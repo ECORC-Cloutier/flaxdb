@@ -4,6 +4,7 @@
 #In the new directory, the final .bam file is created and indexed.
 
 dir=~/flaxdb-data/consensus #path to the desired directory to store merged consensus files
+mkdir $dir
 
 for file in consensus_*
 do
