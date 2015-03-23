@@ -5,16 +5,14 @@
 #First, the script converts the file to .sam, then .bam, and finally sorts the new .bam file.
 #The resulting files are sorted into groups of 1000 and placed into their respective directories. 
 
-file=$1
-base=${file%%.*}
-
-python fasta2sam_single.py $file
-
-samtools view -bS ${base}.sam > ${base}.bam
-
-samtools sort ${base}.bam ${base}_sorted
-
-#samtools index ${base}_sorted.bam
+for file in *.fasta
+do
+    base=${file%%.*}
+    python fasta2sam_single.py $file
+    samtools view -bS ${base}.sam > ${base}.bam
+    samtools sort ${base}.bam ${base}_sorted
+    #samtools index ${base}_sorted.bam
+done
 
 counter=0
 foldernum=1
