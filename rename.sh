@@ -1,4 +1,4 @@
-#When placed into the directory of .fasta files and given a .csv files of properly named genotypes, this script will replace the corresponding file names with the proper name.
+#When placed into the directory of consensus.fasta files and given a .csv files of properly named genotypes, this script will replace each consensus file names with their corresponding proper names.
 #!/bin/bash
 
 for file in *.fasta #remove extraneous words from genotype file name
