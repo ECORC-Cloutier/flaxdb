@@ -1,3 +1,5 @@
+SAM files require 11 mandatory data fields and header information. Below is a list/description of all the information needed to create a .sam file and the corresponding content that is inputted into them by the fasta2sam_single.py script: 
+
 @SQ SN: - reference sequence name: scaffold name (FASTA file name)
 @SQ LN: - reference sequence length: length of FASTA sequence
 QNAME - query template name: FASTA header name
@@ -9,5 +11,7 @@ CIGAR - cigar string: sequence length + 'M'
 RNEXT - reference name of mate/next read: '='
 PNEXT - position of mate/next read: end index of the read (start index + length of read)
 TLEN - observed template length: 0 (unknown)
-SEQ - segment sequence: read (FASTA sequence segment)
+SEQ - segment sequence: read sequence (a segment of the FASTA sequence)
 QUAL - Phred-scale quality: '*' (unknown)
+
+It is not simple to create .sam files from consensus sequences since one must take into account of all the gaps and how the position indices of the reads are displaced when assembling the .sam file, hence the awkward FLAG, POS, and PNEXT values needed.
