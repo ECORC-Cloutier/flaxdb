@@ -1,5 +1,5 @@
 #This script does the actual conversion from .fasta to .sam. 
-#Arbitrary values are set for the CIGAR, QUAL, and FLAG fields. 
+#Arbitrary values are set for the CIGAR, QUAL, TLEN, RNEXT, and FLAG fields. 
 
 from Bio import SeqIO
 import sys
