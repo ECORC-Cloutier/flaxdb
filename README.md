@@ -3,7 +3,7 @@
 These scripts require Biopython and SAMtools.
 
 **Workflow**
-=
+-
 1. Run scaffold_search.py (using a shell script) to parse through the consensus.fasta files and create a separate .fasta file for each scaffold. Make sure to remove the consensus.fasta files after use.
 
 2. Put fastatobam.sh (or if you have GNU Parallel, fastatobam_parallel.sh) and fasta2sam_single.py into the directory of scaffold.fasta files. This will create a .sam, .bam, sorted .bam for each scaffold .fasta file and place the files in groups of 1000 (in new directories). 
