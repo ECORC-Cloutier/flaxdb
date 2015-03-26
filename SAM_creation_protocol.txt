@@ -1,0 +1,13 @@
+@SQ SN: - reference sequence name: scaffold name (FASTA file name)
+@SQ LN: - reference sequence length: length of FASTA sequence
+QNAME - query template name: FASTA header name
+FLAG - bitwise FLAG: 65 for starting read; 129 for end read; 193 for regular (in-between) read
+RNAME - reference sequence name: scaffold name (FASTA file name)
+POS - 1-based leftmost mapping position: starting index of the read (last read end + gap + 1) 
+MAPQ - mapping quality: 255 (highest quality)
+CIGAR - cigar string: sequence length + 'M'
+RNEXT - reference name of mate/next read: '='
+PNEXT - position of mate/next read: end index of the read (start index + length of read)
+TLEN - observed template length: 0 (unknown)
+SEQ - segment sequence: read (FASTA sequence segment)
+QUAL - Phred-scale quality: '*' (unknown)
