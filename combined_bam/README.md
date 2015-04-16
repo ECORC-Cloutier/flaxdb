@@ -1,3 +1,5 @@
+# BAM Combination
+
 The following is a pipeline created by Dr. Frank You of Agriculture and Agri-Food Canada to combine two .bam files together. You can contact him at Frank.you@agr.gc.ca. The source code can be used to run on any dataset, but the instructions below are specifically for use with Dr. Sylvie Cloutier's flax research. 
 
 Requried Tools

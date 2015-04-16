@@ -1,4 +1,4 @@
-# Flax Project
+# BAM Consensus
 
 These scripts require Biopython and SAMtools. Information on SAM file creation can be found in SAM_creation_protocol.txt.
 
