@@ -18,7 +18,7 @@ General Overview
 1.Convert from .bam to .fastq (if necessary). 
 2.Rename the reads (this is important if different genotypes are being combined because without renaming, reads fromd ifferent genotypes cannot be distinguished).
 3. Concatenate .fastq files of two genotypes into one. If there are paired reads, cat them into separate files.
-4. Perform mapping.  
+4. Perform mapping.
 
 Detailed Procedure
 ------------------
