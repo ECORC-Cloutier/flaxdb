@@ -2,7 +2,7 @@
 
 These scripts require Biopython and SAMtools. Information on SAM file creation can be found in SAM_creation_protocol.txt.
 
-**Workflow**
+Operation
 -
 1. Run scaffold_search.py (using a shell script) to parse through the consensus.fasta files and create a separate .fasta file for each scaffold. Make sure to remove the consensus.fasta files after use.
 
