@@ -1,9 +1,13 @@
-#When placed into the directory of consensus.fasta files and given a .csv files of properly named genotypes, this script will replace each consensus file names with their corresponding proper names.
 #!/bin/bash
 
-for file in *.fasta #remove extraneous words from genotype file name
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Renames .fasta files with proper genotype names
+#Instructions: Place into directory of consensus .fasta files with a .csv file of filename vs. genotype (comma separated)
+
+for file in *.fasta 
 do
-    newname=${file%%.*}.fasta
+    newname=${file%%.*}.fasta #remove extraneous words from genotype file name (optional depending on naming format)
     mv $file $newname
 done
 

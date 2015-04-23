@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Concatenates .fastq files for a combined .bam file
+#Insturctions: See README
+#Notes: If not working, do concatenation manually with the procedure outlined in the README
+
 for dir in /*x*
 do
 	cd $dir

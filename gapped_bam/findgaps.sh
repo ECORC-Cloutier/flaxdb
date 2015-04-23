@@ -1,9 +1,9 @@
+#!/bin/bash
+
 #Author: Douglas Huang
-#Modified: April 21, 2015
+#Modified: April 23, 2015
 #Function: Get a list of all the reference genome sequences corresponding to gaps in the alignment
 #Instructions: Use the input .bam file as the first command-line argument and the reference genome .fasta file as the second argument
-
-#!/bin/bash
 
 write_name=${1%%.*} 
 ref_genome=$2

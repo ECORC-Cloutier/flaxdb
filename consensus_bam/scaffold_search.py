@@ -1,5 +1,8 @@
-#This script parses a consensus.fasta file for scaffold sequences and creates a new .fasta file for each scaffold. 
-#If the scaffold.fasta file already exists, it simply appends to it.
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Parses consensus .fasta file for scaffold sequences and create a new .fasta file for each scaffold
+#Instructions: See README
+#Notes: If the scaffold.fasta file already exists, the sequences are simply appended to it.
 
 from Bio import SeqIO
 import sys

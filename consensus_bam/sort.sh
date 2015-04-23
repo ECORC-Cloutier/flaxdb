@@ -1,7 +1,10 @@
 #!/bin/bash
 
-#This is the sorting method used to create directories of 1000 files each.
-#The 1000 grouping is for merging .bam files; samtools has a limited memory space to do the merge so only a maximum of 1000 files per merge can be used.
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Sorts .bam files into directories of 1000
+#Instructions: None (not part of pipeline, for information purposes only)
+#Notes: The 1000 grouping is for merging .bam files; samtools has a limited memory space to do the merge so only a maximum of 1000 files per merge can be used.
 #It is NOT used in the workflow becasue it is already included in fastatobam.sh and fastatobam_parallel.sh.
 #The flow of control actually makes the first directory have 999 files and the rest 1000. 
 

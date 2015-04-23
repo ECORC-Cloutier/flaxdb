@@ -1,5 +1,8 @@
-#This script does the actual conversion from .fasta to .sam. 
-#Arbitrary values are set for the CIGAR, QUAL, TLEN, RNEXT, and FLAG fields. 
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Converts .fasta to .sam. 
+#Instructions: See README
+#Notes: Arbitrary values are set for the CIGAR, QUAL, TLEN, RNEXT, and FLAG fields. Please read SAM_creation_protocol.txt for more information
 
 from Bio import SeqIO
 import sys

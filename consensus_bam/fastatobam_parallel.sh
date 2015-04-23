@@ -1,6 +1,10 @@
 #!/bin/bash
 
-#This script is the GNU parallel version of fastatobam.sh.
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Converts .fasta to .bam and organizes output for next step
+#Instructions: See README
+#Notes: This script is the GNU parallel version of fastatobam.sh.
 #It converts scaffold.fasta files into a sorted .bam file and divides the resulting files into groups of 1000.
 #The 1000 grouping is for merging .bam files; samtools has a limited memory space to do the merge so only a maximum of 1000 files per merge can be used before overloading. Though the sorting step can be separated, it is more convenient if done here.
 #First, the script converts the file to .sam, then .bam, and finally sorts the new .bam file.

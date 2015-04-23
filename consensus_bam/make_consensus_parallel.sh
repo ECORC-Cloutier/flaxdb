@@ -1,6 +1,10 @@
 #!/bin/bash
 
-#This script is the GNU parallel version of make_consensus.sh.
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Merges grouped .bam files together and creates final .bam
+#Instructions: See README
+#Notes: This script is the GNU parallel version of make_consensus.sh.
 #It iterates through a directory containing the directories of 1000 scaffold.bam files, merges each group together, and moves it to a new directory.
 #In the new directory, the final .bam file is created and indexed. 
 

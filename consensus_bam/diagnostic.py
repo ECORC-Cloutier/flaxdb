@@ -1,5 +1,7 @@
-#This script prints all the read lengths and finds the maximum length and total read count for each scaffold.
-#It is useful for debugging and checking if the file is small enough to store the sequences in a list.
+#Author: Douglas Huang
+#Modified: April 23, 2015
+#Function: Prints all the read lengths for each scaffold and finds the maximum length and total read count; useful for debugging
+#Instructions: Use the input scaffold .fasta file as the command-line argument
 
 from Bio import SeqIO
 import sys
