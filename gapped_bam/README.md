@@ -7,4 +7,4 @@ Operation
 
     bash findgaps.sh input.bam reference_genome.fasta
 
-where input.bam is your input .bam file and reference_genome.fasta is your reference genome. The .bam file *MUST* be sorted and its headers *MUST* be identical to those of the reference .fasta file. Both the shell script and the Python code (will be called by the shell script) must be present in the same directory for operation. 
+where input.bam is your input .bam file and reference_genome.fasta is your reference genome. The .bam file *MUST* be sorted and its headers *MUST* be identical to those of the reference .fasta file. The Python code is called by the shell script (to do the filtering) and therefore must always be present with it.
